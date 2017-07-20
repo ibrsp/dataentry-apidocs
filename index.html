@@ -1,0 +1,1040 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Dataentry API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Dataentry API Reference</p>
+
+<h1 id="cases">Cases</h1>
+
+<h2 id="get-cases-updated-since-date">Get cases updated since date</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api/cases?since=2017-01-01T00:00:00"</span>
+
+curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api/cases?since=2017-01-01T00:00:00&amp;take=10"</span>
+
+curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api/cases?since=2017-01-01T00:00:00&amp;skip=0"</span>
+
+curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api/cases?since=2017-01-01T00:00:00&amp;take=10&amp;skip=0"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"conditionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"752a86a5-c784-4d37-91ea-d296ad6bb351"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"patientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"888755cd-3445-4335-8718-53737da80141"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"patientGender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"patientIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"332"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"final"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diagnosis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diagnosis"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A15"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A15 - Respiratory tuberculosis, bacteriologically and histologically confirmed"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"dstProfile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DstProfile"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XDR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extensive drug resistance"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"registrationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2014-04-01T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ageOnset"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-08T17:07:11.557697+03:00"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"conditionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"df90aace-853d-469f-b96a-380a4d393f98"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"patientId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2d79ea88-3ae5-45a0-9ce5-7270a9ed6a09"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"patientGender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"female"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"patientIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"509"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"final"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"diagnosis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diagnosis"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A15"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A15 - Respiratory tuberculosis, bacteriologically and histologically confirmed"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"dstProfile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DstProfile"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XDR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Extensive drug resistance"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"registrationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-04-02T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ageOnset"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-06-08T12:32:34.23633+03:00"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all cases updated since date.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://data.tbportals.niaid.nih.gov/api/cases?since={since}</code></p>
+
+<p><code class="prettyprint">GET https://data.tbportals.niaid.nih.gov/api/cases?since={since}&amp;take={take}</code></p>
+
+<p><code class="prettyprint">GET https://data.tbportals.niaid.nih.gov/api/cases?since={since}&amp;skip={skip}</code></p>
+
+<p><code class="prettyprint">GET https://data.tbportals.niaid.nih.gov/api/cases?since={since}&amp;take={take}&amp;skip={skip}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>since</td>
+<td>yes</td>
+<td>-</td>
+<td>Date of the last update of the case (ISO 8601 format).</td>
+</tr>
+<tr>
+<td>take</td>
+<td>no</td>
+<td>128</td>
+<td>Count of cases included to the rerult (paging purposes).</td>
+</tr>
+<tr>
+<td>skip</td>
+<td>no</td>
+<td>0</td>
+<td>Count of skipped cases included to the rerult (paging purposes).</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+NOTE: <b>since</b> is required parameter!
+</aside>
+
+<h2 id="get-case-by-id">Get case by Id</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api/ace190f5-0e52-4c5d-bf8b-12651b102580"</span>
+
+curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api?id=ace190f5-0e52-4c5d-bf8b-12651b102580"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ace190f5-0e52-4c5d-bf8b-12651b102580"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T15:19:00.985344+03:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"final"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"patient"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"157ae47f-08ad-40bc-995e-ef6a3aed4318"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-02T12:30:08.312157+03:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"male"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G-134"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tbilisi"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50 Giorgi Maruashvili street, Tbilisi, 0101, Georgia"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GE"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"shortName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NCTBLD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"officialName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"National Center for Tuberculosis and Lung Diseases"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"anamnesis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">175</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">61</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"diagnosis"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diagnosis"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A15.1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A15.1 - Tuberculosis of lung, confirmed by culture only"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"dstProfile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DstProfile"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MDRnonXDR"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidrug resistance"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"comorbidity"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"localization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Localization"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pulm"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pulmonary tuberculosis"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"socialData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"education"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"employment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Employment"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unemployed"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No official work/position"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"riskFactors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tobacoUse"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RiskFactor"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current smoker"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"totalChildren"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"totalContacts"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"specimens"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbe8c023-b0ff-4f8c-900f-737ef6018c84"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"containerIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="s2">"G-134_S_1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"collected"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-05T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bodySite"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BodySite"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sputum"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sputum sample"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"microscopy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a8eb1f15-c0ff-41ad-b9d4-d7c9ef195d1d"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-05T00:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Negative result"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Microscopy"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"culture"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0b1539db-5616-445a-8e75-0cba99f60138"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-07T00:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20 to 100 colonies"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Culture"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"dst"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a310f8db-6857-4452-a304-568f8a02cb18"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-10-09T00:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"drugs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"H"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Isoniazid (H, INH)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rifampicin (R, RIF)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Streptomycin (S)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ethambutol (E, EMB)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"R"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ofx"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ofloxacin (Ofx)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cm"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Capreomycin (Cm)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Am"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amikacin (Am)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Km"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kanamycin (Km)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pyrazinamide (Z, PZA)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Levofloxacin (Lfx)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mfx"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Moxifloxacin (Mfx)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pas"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"p-aminosalicylic acid (Pas, PAS)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pto"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prothionamide (Pto)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cs"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cycloserine (Cs)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amx/Clv"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amoxicillin-clavulanate (Amx/Clv)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mb"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mycobutin (Mb)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dld"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delamanid (Dlm)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bdq"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bedaquiline (Bdq)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ipm/Cln"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Imipenem-cilastatin (Ipm/Cln)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lzd"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Linezolid (Lzd)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cfz"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clofazimine (Cfz)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clr"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clarithromycin (Clr)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ft"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluoroquinolones (Ofx, Lfx or Mfx)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Drug"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AG/CP"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aminoglycosides - injectible agents (Cm, Km, Am)"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="s2">"dstTest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DstTest"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"le"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lowenstein-Jensen"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="s2">"sequences"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"treatment"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2e9c21b9-f58f-47d2-a28e-b405e330ef0d"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-07T00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"outcome"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Outcome"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"failure"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failure"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"activities"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-08-07T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-09T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"E"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Cm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Pas"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Pto"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Cs"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-09-09T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-02T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Cm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Z"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Pto"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-11-02T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-14T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Cm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Bdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lzd"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Cfz"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-14T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-01T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Cm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Mfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Amx/Clv"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Bdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lzd"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Cfz"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-01T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-05T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Cm"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Mfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Bdq"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Cfz"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-05T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-08T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Mfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Cfz"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"start"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-09-08T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-29T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"statusReason"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"medications"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"Lfx"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"Mfx"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"imagingStudies"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f3131d14-df6a-4ae6-945d-b81e7cf342d9"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"imagesCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"studyDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-22T00:00:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"studyUid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.25.133845720824591687776595378033935132558"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"seriesCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"report"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"procedureCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"issued"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-22T00:00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"component"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lung Capacity Decrease"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Process Prevalence"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ProcessPrevalence"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"more2"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prevalence of process  in more than or equal to 2 segments"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affect Level"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AffectedLevel"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"upper"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affect localized in Upper Lobus"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affected Segments"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AffectedSegments"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S1+2"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affected segment S1+2"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shadow Pattern"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ShadowPattern"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"infiltrate"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Localised alveoloacinar diseases"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lung Cavity Size"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LungCavitySize"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No lung cavity "</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total cavernum"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TotalCavities"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No cavities "</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bronchial Obstruction"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dissemination"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limfoadenopatia"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nodi Calcinatum"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Post TB Residuals"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Plevritis"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Affect Pleura"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pneumothorax"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Accumulation of Contrast"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thromboembolism Of The Pulmonary Artery"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anomaly of lung develop"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YesNo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anomaly Of Mediastinum Vessels Develop"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"used"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"series"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.25.199250194160254851207031419314980778162"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"started"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-22T00:00:00"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"modality"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Modality"</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="s2">"numberOfInstances"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"instance"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"uid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.25.272532547048477304331308731307098035156"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"content"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"size"</span><span class="p">:</span><span class="w"> </span><span class="s2">"552562"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://imagery.tbportal.org/157ae47f-08ad-40bc-995e-ef6a3aed4318/2.25.133845720824591687776595378033935132558/2.25.199250194160254851207031419314980778162/2.25.272532547048477304331308731307098035156.dcm"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="s2">"sopClass"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2.840.10008.5.1.4.1.1.7"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves the case by Id.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p>&lsquo;GET https://data.tbportals.niaid.nih.gov/api/{id}&rsquo;</p>
+
+<p>&lsquo;GET https://data.tbportals.niaid.nih.gov/api?id={id}&rsquo;</p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ID</td>
+<td>The ID of the case to retrieve</td>
+</tr>
+</tbody></table>
+
+<h1 id="imaging-studies">Imaging studies</h1>
+
+<h2 id="list-imaging-studies-by-series">List imaging studies by series</h2>
+<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://data.tbportals.niaid.nih.gov/api/imagingstudies/bdc9c398-c6c6-4101-add2-85f1b13db870/2.25.224401776773405420578159229407543739753/2.25.87603066232054466722804346139176759907"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"https://imagery.tbportal.org/bdc9c398-c6c6-4101-add2-85f1b13db870/2.25.224401776773405420578159229407543739753/2.25.87603066232054466722804346139176759907/2.25.5871713374023139953558641168991505875.dcm"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves links to all instances of selecter imaging series.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://data.tbportals.niaid.nih.gov/api/imagingstudies/{patientId}/{studyUid}/{seriesUid}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>patientId</td>
+<td>yes</td>
+<td>Id of the patient.</td>
+</tr>
+<tr>
+<td>studyUid</td>
+<td>yes</td>
+<td>Uid of the study.</td>
+</tr>
+<tr>
+<td>seriesUid</td>
+<td>yes</td>
+<td>Uid of the series.</td>
+</tr>
+</tbody></table>
+
+          <h1 id="errors">Errors</h1>
+
+<p>The Dataentry API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; The server cannot or will not process the request due to an apparent client error.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Forbidden &ndash; The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The requested resource could not be found but may be available in the future.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed &ndash; A request method is not supported for the requested resource; for example, a GET request on a form that requires data to be presented via POST, or a PUT request on a read-only resource.</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Not Acceptable &ndash; The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; The server is currently unavailable (because it is overloaded or down for maintenance). Generally, this is a temporary state.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
