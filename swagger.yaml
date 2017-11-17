@@ -1,0 +1,270 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "dataentry-apidoc"
+  description: \[TBD\]
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: \[TBD\]
+    email: TBD@example.com
+    url: \[TBD\]
+  license:
+    name: \[TBD\]
+    url: \[TBD\]
+host: api.data.tbportals.niaid.nih.gov
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /patient:
+    get:
+      description: |
+        Returns all patients from the system that the client has access to
+      operationId: findPatients
+      parameters:
+        - name: _take
+          in: query
+          description: Count of records to return (paging purposes)
+          required: false
+          type: integer
+          format: int32
+          default: 100
+        - name: _skip
+          in: query
+          description: Number of results to skip (paging purposes)
+          required: false
+          type: integer
+          format: int32
+          default: 0
+      responses:
+        200:
+          description: OK. Patients response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Patient'
+        401:
+          description: Not authenticated 
+          schema:
+            $ref: '#/definitions/Error'
+        403:
+          description: Access token does not have the required scope 
+          schema:
+            $ref: '#/definitions/Error'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+      - OAuth2:
+        - read:patient
+    post:
+      description: Creates a new patient. Duplicates are NOT allowed
+      operationId: addPatient
+      parameters:
+        - name: patient
+          in: body
+          description: Patient to add
+          required: true
+          schema:
+            $ref: '#/definitions/CreatePatient'
+      responses:
+        201:
+          description: Patient was created
+          schema:
+            $ref: '#/definitions/Patient'
+        401:
+          description: Not authenticated 
+          schema:
+            $ref: '#/definitions/Error'
+        403:
+          description: Access token does not have the required scope 
+          schema:
+            $ref: '#/definitions/Error' 
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+      - OAuth2:
+        - write:patient
+  /patient/{id}:
+    get:
+      description: Returns a user based on a single ID
+      operationId: getPatientById
+      parameters:
+        - name: id
+          in: path
+          description: ID of patient to fetch
+          required: true
+          type: string
+          format: uuid
+      responses:
+        200:
+          description: OK. Patient response
+          schema:
+            $ref: '#/definitions/Patient'
+        401:
+          description: Not authenticated 
+          schema:
+            $ref: '#/definitions/Error'
+        403:
+          description: Access token does not have the required scope 
+          schema:
+            $ref: '#/definitions/Error'     
+        404:
+          description: Patient with specified ID was not found
+          schema:
+            $ref: '#/definitions/Error' 
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+      - OAuth2:
+        - read:patient
+    put:
+      description: Update an existing patientby ID
+      operationId: updatePatient
+      parameters:
+        - name: id
+          in: path
+          description: ID of patient to update
+          required: true
+          type: string
+          format: uuid
+        - name: patient
+          in: body
+          description: patient to add
+          required: true
+          schema:
+            $ref: '#/definitions/CreatePatient'
+      responses:
+        200:
+          description: Patient was updated
+          schema:
+            $ref: '#/definitions/Patient'
+        401:
+          description: Not authenticated 
+          schema:
+            $ref: '#/definitions/Error'
+        403:
+          description: Access token does not have the required scope 
+          schema:
+            $ref: '#/definitions/Error' 
+        404:
+          description: Patient with specified ID was not found
+          schema:
+            $ref: '#/definitions/Error' 
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+      - OAuth2:
+        - write:patient
+    delete:
+      description: Delete an existing patient by ID
+      operationId: deletePatient
+      parameters:
+        - name: id
+          in: path
+          description: ID of patient to fetch
+          required: true
+          type: string
+          format: uuid
+      responses:
+        200:
+          description: Patient was deleted
+        401:
+          description: Not authenticated 
+          schema:
+            $ref: '#/definitions/Error'
+        403:
+          description: Access token does not have the required scope 
+          schema:
+            $ref: '#/definitions/Error'     
+        404:
+          description: Patient with specified ID was not found
+          schema:
+            $ref: '#/definitions/Error' 
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+      security:
+      - OAuth2:
+        - delete:patient
+definitions:
+#Resourses
+  Base:
+    type: object
+    required:
+      - id
+      - version
+      - published
+      - updated
+    properties:
+      id:
+        type: string
+      version:
+        type: string
+      published:
+        type: string
+        format: date-time
+      updated:
+        type: string
+        format: date-time
+      identifier:
+        type: string
+##common
+  Reference:
+    type: object
+    required:
+      - id
+    properties:
+      id:
+        type: string
+##patient
+  Patient:
+    allOf:
+      - $ref: '#/definitions/Base'
+      - $ref: '#/definitions/CreatePatient'
+      - type: object
+  CreatePatient:
+    properties:
+      gender:
+        type: string
+        enum: [male, female, other, unknown]
+        example: male
+      managingOrganization:
+        $ref: '#/definitions/Reference'
+    required:
+      - gender
+      - managingOrganization
+##Schemas
+  Error:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
+
+securityDefinitions:
+  OAuth2:
+    type: oauth2
+    flow: application
+    description: OAuth 2.0 authentication flow with Client Credentials Grant
+    tokenUrl: https://data.tbportals.niaid.nih.gov/identity/connect/token
+    scopes:
+      read:patient: Grants patient read access
+      write:patient: Grants patient write access
+      delete:patient: Grants patient delete access
